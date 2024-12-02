@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gift-exchange-deployment
+  labels:
+    app: gift-exchange
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gift-exchange
+  template:
+    metadata:
+      labels:
+        app: gift-exchange
+    spec:
+      containers:
+      - name: gift-exchange
+        image: <registry_url>/gift-exchange:<1.0.0>
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service    # More detailed explanation see the `deploy.sh` file
+metadata:
+  name: gift-exchange-service
+spec:
+  selector:
+    app: gift-exchange
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  

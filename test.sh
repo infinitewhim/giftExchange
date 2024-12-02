@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Trigger the unit test one by one
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_list_members
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_retrieve_member_success
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_retrieve_member_not_found
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_create_member
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_update_member
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_delete_member
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_gift_exchange_with_no_member
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_gift_exchange_with_one_member
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_gift_exchange_with_one_member_for_multiple_years
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_gift_exchange_with_two_members_year1
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_gift_exchange_with_two_members_year2
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_gift_exchange_with_two_members_year5
+python3 manage.py test exchange.tests.GiftExchangeTestCase.test_gift_exchange_with_three_members
